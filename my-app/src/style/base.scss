@@ -1,0 +1,17 @@
+  
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;700&family=Ubuntu:wght@300;500;700&display=swap');
+
+$dark-gray: #b040be;
+$light-gray: #a19e99;
+$go-button: #d9e4dd;
+$placeholder: #e1a7e9;
+
+$font-family: 'Josefin Sans', sans-serif;
+
+* {
+    font-family: $font-family;
+}
+
+main {
+  margin: 0 5% 0 5%;
+}
