@@ -1,10 +1,10 @@
 import React from 'react';
 
 class Main extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            method: '',
+            method: 'get',
             url: '',
             placeUrl: '',
             placeMethod: ''
@@ -24,11 +24,26 @@ class Main extends React.Component {
         this.setState({ method: e.target.value })
     }
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
+
         e.preventDefault();
+
+
+
         this.setState({ placeUrl: this.state.url });
         this.setState({ placeMethod: this.state.method });
+
+        let raw = await fetch(this.state.placeUrl);
+        let data = await raw.json();
+
+        console.log('data', data);
+        this.props.handdel(data)
     }
+
+
+
+
+
 
 
     render() {
@@ -56,7 +71,7 @@ class Main extends React.Component {
                     </form>
                 </section>
 
-                <div>
+                <div className='Show'>
                     <span> {this.state.placeMethod} </span>
                     <span> {this.state.placeUrl} </span>
                 </div>
