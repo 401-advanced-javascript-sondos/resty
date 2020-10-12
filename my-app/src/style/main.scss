@@ -45,3 +45,12 @@ input{
     margin: 5px;
   }
 }
+.result{
+ 
+  margin-bottom: 10vh;
+    max-height: 40vh;
+    overflow: scroll;
+    border: 1px solid $light-gray;
+    padding: 10px;
+    margin: 20px;
+}
