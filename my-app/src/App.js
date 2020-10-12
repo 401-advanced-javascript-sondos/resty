@@ -7,16 +7,31 @@ import './style/main.scss';
 
 import Header from './components/header';
 import Footer from './components/footer';
-import Main from './components/main';
+import Main from './components/form';
+import Result from './components/result';
 
 
-class App extends React.Component{
-  render(){
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      count:0,
+      result:[]
+    }
+  }
 
- return (  <React.Fragment>
-      <Header/>
-      <Main/>
-      <Footer/>
+  handdelUpdate = (data) => {
+    console.log('data',data)
+    this.setState({ count: data.count, result:data.results })
+  }
+
+  render() {
+
+    return (<React.Fragment>
+      <Header />
+      <Main handdel={this.handdelUpdate} />
+      <Result headers={this.state} />
+      <Footer />
     </React.Fragment>)
   }
 };
