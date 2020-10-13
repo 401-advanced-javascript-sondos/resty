@@ -1,4 +1,5 @@
 import React from 'react';
+import './main.scss';
 
 class Main extends React.Component {
     constructor(props) {
@@ -7,7 +8,8 @@ class Main extends React.Component {
             method: 'get',
             url: '',
             placeUrl: '',
-            placeMethod: ''
+            placeMethod: '',
+            reqBody: ''
 
         };
 
@@ -24,20 +26,22 @@ class Main extends React.Component {
         this.setState({ method: e.target.value })
     }
 
+    handdelBody = e => {
+        e.preventDefault();
+        this.setState({ reqBody: e.target.value })
+    }
+
+
+
     handleSubmit = async e => {
 
         e.preventDefault();
-
-
-
         this.setState({ placeUrl: this.state.url });
         this.setState({ placeMethod: this.state.method });
+        let request=this.state;
+        this.props.fetchdata(request);
 
-        let raw = await fetch(this.state.placeUrl);
-        let data = await raw.json();
 
-        console.log('data', data);
-        this.props.handdel(data)
     }
 
 
@@ -65,16 +69,20 @@ class Main extends React.Component {
                             <button onClick={this.setMethod} value='put'>PUT</button>
                             <button onClick={this.setMethod} value='delete'>DELETE</button>
                         </fieldset>
-
+                        
+                        <fieldset >
+                            <legend>Body</legend>
+                        <textarea onChange={this.handdelBody}  ></textarea>
+                        </fieldset>
 
 
                     </form>
                 </section>
 
-                <div className='Show'>
+                {/* <div className='Show'>
                     <span> {this.state.placeMethod} </span>
                     <span> {this.state.placeUrl} </span>
-                </div>
+                </div> */}
 
             </div>
 
