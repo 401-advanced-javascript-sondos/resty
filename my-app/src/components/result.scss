@@ -1,27 +1,17 @@
 
 #overlay{
     
-#overlay{
-    
-}
-
-:root {
-    --effect: hover 1s linear infinite;
-  }
-  *{
-     margin:0;
-  }
-  
-  body {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background: black;
-    align-items: center;
-    justify-content: center;
-  }
+top:0;
+left: 0;
+right: 0;
+bottom: 0;
+position: absolute;
+display: block;
+background: rgba(0,0,0,.5);
   
   div {
+    top:30%;
+    position: relative;
     text-align: center;
   }
   

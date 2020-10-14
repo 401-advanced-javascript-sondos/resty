@@ -3,12 +3,12 @@ import './history.scss';
 
 function History(props){
 
-    console.log('You are in history',props.calls);
+    // console.log('You are in history',props.calls);
     const calls = props.calls || {};
-    console.log('call',calls);
+    // console.log('call',calls);
 
  function handdelClick(callback){
-    console.log('recall methos',callback);
+    // console.log('recall methos',callback);
 
     props.handdel(callback)
 

@@ -10,13 +10,14 @@ require('react-json-pretty/themes/monikai.css');
 
 
 const Result = (props) => {
-
+// console.log('result',props)
+// console.log('count',props.countForm)
     return (
         <div>
             <If condition={props.loading}>
                 <Then>
                     <div id="overlay">
-               
+                        <div>
                             <p>l</p>
                             <p>o</p>
                             <p>a</p>
@@ -24,7 +25,7 @@ const Result = (props) => {
                             <p>i</p>
                             <p>n</p>
                             <p>g</p>
-                        
+                        </div>
 
 
                     </div>
@@ -32,8 +33,8 @@ const Result = (props) => {
                 </Then>
                 <Else>
                     <section>
-                        Count: <JSONPretty src={props.resultFrom} padding={4} ></JSONPretty>
-                    Result: <JSONPretty src={props.resultFrom} padding={4} ></JSONPretty>
+                    Count: <JSONPretty data={props.countForm} padding={4} ></JSONPretty>
+                    Result: <JSONPretty data={props.resultFrom} padding={4} ></JSONPretty>
                     </section>
                 </Else>
 

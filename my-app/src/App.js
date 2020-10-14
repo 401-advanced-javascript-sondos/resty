@@ -20,14 +20,15 @@ class App extends React.Component {
       result: [],
       req: {},
       history: JSON.parse(localStorage.getItem('history')),
-      loading: false
+      loading: false,
     }
   }
 
 
   handdelUpdate = (data) => {
-    console.log('data', data)
+    // console.log('data', data)
     this.setState({ count: data.count, result: data.results })
+    // console.log('result',this.state.result)
   }
 
 
@@ -35,13 +36,14 @@ class App extends React.Component {
   handdelFetch = (request) => {
     this.toggle();
 
+    // console.log('update1', this.state.loading)
     this.setState({ req: request });
 
     let url = request.url;
     let method = request.method;
-    let body = request.reqbody
+    let body = request.body
     console.log('req', request)
-    let obj = { url, method, body };
+    let obj = { method, url, body };
 
     let hash = md5(JSON.stringify(this.state.req));
     console.log('hash', hash);
@@ -58,14 +60,19 @@ class App extends React.Component {
       body: JSON.stringify(body)
     }).then(data => data.json())
       .then(results => {
-        this.handdelUpdate(results)
+        this.toggle();
+        this.handdelUpdate(results);
+
       })
 
-    this.toggle();
+
   }
+
 
   toggle = () => {
     this.setState({ loading: !this.state.loading });
+    // console.log('update', this.state.loading)
+
   }
 
   render() {
@@ -74,7 +81,7 @@ class App extends React.Component {
       <Header />
       <Main fetchdata={this.handdelFetch} />
       <History calls={this.state.history} handdel={this.handdelFetch} />
-      <Result resultFrom={this.state.count} loading={this.state.loading} />
+      <Result resultFrom={this.state.result} loading={this.state.loading} countForm={this.state.count}/>
       <Footer />
     </React.Fragment >)
   }

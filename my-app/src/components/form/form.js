@@ -7,9 +7,9 @@ class Main extends React.Component {
         this.state = {
             method: 'get',
             url: '',
-            placeUrl: '',
-            placeMethod: '',
-            reqBody: ''
+            // placeUrl: '',
+            // placeMethod: '',
+            body: undefined
 
         };
 
@@ -28,7 +28,7 @@ class Main extends React.Component {
 
     handdelBody = e => {
         e.preventDefault();
-        this.setState({ reqBody: e.target.value })
+        this.setState({ body: e.target.value })
     }
 
 
@@ -36,8 +36,8 @@ class Main extends React.Component {
     handleSubmit = async e => {
 
         e.preventDefault();
-        this.setState({ placeUrl: this.state.url });
-        this.setState({ placeMethod: this.state.method });
+        // this.setState({ placeUrl: this.state.url });
+        // this.setState({ placeMethod: this.state.method });
         let request=this.state;
         this.props.fetchdata(request);
 
