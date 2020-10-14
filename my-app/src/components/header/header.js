@@ -1,11 +1,33 @@
 import React from 'react';
 import './header.scss';
+import { Link, NavLink } from 'react-router-dom';
 
 
-const Header=()=>{
-    return(
-      <header className="App-header"> <h1> RESTy</h1></header>
-    )
+const Header = () => {
+  return (
+
+
+
+    <header className="App-header">
+
+      <h1> RESTy</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to='/' >Home</Link>
+          </li>
+
+          <li>
+            <NavLink to='/history'>History</NavLink>
+          </li>
+          <li>
+            <NavLink to='/help'>Help</NavLink>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+  )
 };
 
 export default Header;

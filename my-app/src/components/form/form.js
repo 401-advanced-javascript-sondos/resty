@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.scss';
 
-class Main extends React.Component {
+class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -57,7 +57,7 @@ class Main extends React.Component {
                     <form className="form" onSubmit={this.handleSubmit}>
                         <fieldset >
                             <legend>URL</legend>
-                            <input onInput={this.setUrl} />
+                            <input onInput={this.setUrl}  value={this.props.fill.url}/>
                             <button type='submit' value="Submit" className="button">GO!</button>
                         </fieldset>
 
@@ -72,7 +72,7 @@ class Main extends React.Component {
                         
                         <fieldset >
                             <legend>Body</legend>
-                        <textarea onChange={this.handdelBody}  ></textarea>
+                        <textarea onChange={this.handdelBody} value={this.props.fill.body}  ></textarea>
                         </fieldset>
 
 
@@ -80,8 +80,8 @@ class Main extends React.Component {
                 </section>
 
                 {/* <div className='Show'>
-                    <span> {this.state.placeMethod} </span>
-                    <span> {this.state.placeUrl} </span>
+                    <span> {this.state.method} </span>
+                    <span> {this.state.url} </span>
                 </div> */}
 
             </div>
@@ -91,4 +91,4 @@ class Main extends React.Component {
 
 };
 
-export default Main;
+export default Form;

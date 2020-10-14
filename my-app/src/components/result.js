@@ -32,7 +32,7 @@ const Result = (props) => {
 
                 </Then>
                 <Else>
-                    <section>
+                    <section className="ResultApp">
                     Count: <JSONPretty data={props.countForm} padding={4} ></JSONPretty>
                     Result: <JSONPretty data={props.resultFrom} padding={4} ></JSONPretty>
                     </section>
