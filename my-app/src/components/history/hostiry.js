@@ -1,12 +1,12 @@
 import React from 'react';
-import { Redirect , NavLink, Route, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import './history.scss';
 
 function History(props) {
 
     // console.log('You are in history',props.calls);
     const calls = props.calls || {};
-    // console.log('call',calls);
+    console.log('call',calls);
 
     function handdelClick(callback) {
         console.log(callback)

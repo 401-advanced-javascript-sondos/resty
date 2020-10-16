@@ -8,7 +8,7 @@ const Header = () => {
 
 
 
-    <header className="App-header">
+    <header className="App-header" data-testid='test'>
 
       <h1> RESTy</h1>
       <nav>

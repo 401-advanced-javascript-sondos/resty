@@ -1,6 +1,5 @@
 import React from 'react';
-import md5 from 'md5';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import './style/base.scss';
 
@@ -87,8 +86,8 @@ class App extends React.Component {
     // </React.Fragment >
 
     <BrowserRouter>
-     <Header/>
-     <Main/>
+     <Header data-testid='main'/>
+     <Main />
      <Footer/>
     </BrowserRouter>
     )
