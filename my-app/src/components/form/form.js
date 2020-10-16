@@ -57,7 +57,7 @@ class Form extends React.Component {
                     <form className="form" onSubmit={this.handleSubmit}>
                         <fieldset >
                             <legend>URL</legend>
-                            <input onInput={this.setUrl}  value={this.props.fill.url}/>
+                            <input onInput={this.setUrl}  value={this.props.fill.url} data-testid='input'/>
                             <button type='submit' value="Submit" className="button">GO!</button>
                         </fieldset>
 

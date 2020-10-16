@@ -81,22 +81,18 @@ class Main extends React.Component {
         return (
             <main>
                 <Switch>
+
                     <Route exact path='/'>
-
                         <Form fetchdata={this.handdelFetch} fill={this.state.req} />
-                        {/* <History calls={this.state.history} handdel={this.handdelFetch} /> */}
                         <Result resultFrom={this.state.result} loading={this.state.loading} countForm={this.state.count} />
-
                     </Route>
 
                     <Route exact path='/history'>
-                    <History calls={this.state.history} handdel={this.handdelFetch}  />
-
+                        <History calls={this.state.history} handdel={this.handdelFetch} />
                     </Route>
 
-                    <Route exact path='/help'>
+                    <Route exact path='/help' data-testid='input'>
                         <Help />
-
                     </Route>
 
                 </Switch>

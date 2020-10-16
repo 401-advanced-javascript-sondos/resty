@@ -82,12 +82,13 @@ background: rgba(0,0,0,.5);
 
 .ResultApp{
   border: solid 2px #635a88;
-  margin: .5em;
+  height: 300px;
+  // margin: .5em;
   min-height: 20vmin;
   border-radius: .3em;
   padding: 1em ;
-  margin-top: 20px;
-
-
+  // margin-top: 20px;
+  overflow: scroll;
+  margin-bottom: 10vh;
 }
 
