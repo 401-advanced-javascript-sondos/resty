@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-// import { shallow, mount } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from 'enzyme';
 // import Adapter from 'enzyme-adapter-react-15';
 // Enzyme.configure({ adapter: new Adapter() })
 
@@ -38,16 +39,16 @@ describe('footer', () => {
 })
 
 
-// describe('form', () => {
-//     it('should the form be exists', () => {
-//         let form = shallow(<Form />)
-//         let app = screen.getByTestId('input');
-//         expect(form.find('button').exists()).toBeTruthy();
-//         expect(form.find('input').exists()).toBeTruthy();
-//         expect(form.find('button').exists()).toBeTruthy();
+describe('form', () => {
+    it('should the form be exists', () => {
+        let form = mount(<Form />)
+        // let app = screen.getByTestId('input');
+        expect(form.find('button').exists()).toBeTruthy();
+        expect(form.find('input').exists()).toBeTruthy();
+        expect(form.find('button').exists()).toBeTruthy();
 
-//     })
-// })
+    })
+})
 
 // test('help rout',()=>{
 //     render(<App/>);
